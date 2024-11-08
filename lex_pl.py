@@ -2,9 +2,6 @@ from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 import re
 
-# Lexical Analyzer Functions
-
-
 # Check if character is delimiter
 def is_delimiter(char):
     return char in {',', ';', '(', ')', '[', ']', '{', '}'}
@@ -115,7 +112,8 @@ def generate_pdf(tokens, input_text, output_filename="lexical_analysis.pdf"):
     y = height - 150
     c.drawString(30, y, "Lexemes")
     c.drawString(200, y, "Tokens")
-    y -= 20
+    c.drawString(30, height - 160, "=====================================")
+    y -= 30
 
     # Check if tokens exist
     if not tokens:
